@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Exercicio 06</title>
+	<script type="text/javascript" src="../jquery.js"></script>
+</head>
+<body>
+
+<textarea id="editor" cols="50" rows="20"></textarea>
+
+<br>
+
+<button id="btnAtualiza">Atualziar</button>
+
+<br>
+
+<p>HTML : 
+	<div id="saida"></div>
+</p>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$('#btnAtualiza').click(function(){
+		var content = $('#editor').val();
+
+		$('#saida').html(content);
+	});
+
+});
+
+</script>
+</body>
+</html>

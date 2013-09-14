@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Exercício 02</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../jquery.js"></script>
+</head>
+<body>
+
+	<ul>
+		<li>Item 01</li>
+		<li>Item 02</li>
+		<li>Item 03</li>
+	</ul>
+
+	<a href="#" class="muda-cor">Mudar cor da lista</a>
+
+	<button id="reset">Resetar</button>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+
+		$('li').css('cursor', 'pointer');
+
+		$('.muda-cor').click(function(){
+			$('li:even').css('color', 'blue');
+		});
+
+		$('#reset').click(function(){
+			$('li').css('color', 'black');
+		});
+
+	});
+
+</script>
+
+</body>
+</html>

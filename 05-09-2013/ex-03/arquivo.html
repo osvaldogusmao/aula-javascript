@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Exercício 02</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../jquery.js"></script>
+</head>
+<body>
+
+
+	<ul>
+		<li>Item 01</li>
+		<li>Item 02</li>
+		<li>Item 03</li>
+	</ul>
+
+	<button id="reset">Resetar</button>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+
+		$('li').css('cursor', 'pointer');
+
+		$('li').click(function(){
+
+			$(this).fadeOut();
+
+		});
+
+		$('#reset').click(function(){
+			$('li').fadeIn();
+		});
+
+	});
+
+</script>
+
+</body>
+</html>
