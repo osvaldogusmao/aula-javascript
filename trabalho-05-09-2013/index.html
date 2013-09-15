@@ -127,8 +127,8 @@
 <body>
 
 	<div class="vitoria">
-		<h5>Parabéns!!!! <br>
-			Nivel <span class="nivel">1</span> completo. <br>
+		<h5>Parabéns!<br>
+			Nível <span class="nivel">1</span> completo. <br>
 		</h5>
 		<a href="#" class="jogar-novamente">Próximo nível</a>
 	</div>
@@ -171,6 +171,11 @@
 			<span>X</span>
 		</div>
 
+
+		<div class="muda-cor">
+
+		</div>
+
 	</div>
 
 
@@ -180,6 +185,7 @@
 
 		var nivel = 1;
 		var pontos = 0;
+
 
 		$('html').keydown(function(event){
 			if(event.which === 39 ){
@@ -246,12 +252,6 @@
 
 			var newTop = (topMeta.replace("px", "") - 100 ) + "px";
 
-			/*console.log("TOp - Preto " + newTop);
-			console.log("TOp - X " + topObjetivo);
-
-			console.log("Left - Preto " + leftMeta);
-			console.log("Left - X " + leftObjetivo);*/
-
 			if (leftObjetivo === leftMeta && topObjetivo === newTop){
 				$('html, body').animate({ scrollTop:0 }, 500);
 				$(".vitoria").fadeIn();
@@ -261,6 +261,7 @@
 
 		$('.jogar-novamente').click(function(){
 			$('.vitoria').fadeOut(500, "linear", aumentaNivel);
+			resetar();
 		});
 
 		function aumentaNivel(){
@@ -282,8 +283,8 @@
 
 		function localizaCima(){
 
-			var topMeta = $('.quadrado').css('top');
-			var leftMeta = $('.quadrado').css('left');
+			var topMeta = $('.local-quadrado').css('top');
+			var leftMeta = $('.local-quadrado').css('left');
 
 			var newTop = Number(topMeta.replace("px", ""));
 			var newLeft = Number(leftMeta.replace("px", ""));
@@ -307,8 +308,8 @@
 
 		function localizaBaixo(){
 			
-			var topMeta = $('.quadrado').css('top');
-			var leftMeta = $('.quadrado').css('left');
+			var topMeta = $('.local-quadrado').css('top');
+			var leftMeta = $('.local-quadrado').css('left');
 
 			var newTop = Number(topMeta.replace("px", ""));
 			var newLeft = Number(leftMeta.replace("px", ""));
@@ -321,6 +322,11 @@
 
 			$('.local-quadrado').css('top', newTop);
 			$('.local-quadrado').css('left', newLeft);			
+		}
+
+		function resetar(){
+			$('.quadrado').css('top', "10");
+			$('.quadrado').css('left', "10");				
 		}
 
 	});
