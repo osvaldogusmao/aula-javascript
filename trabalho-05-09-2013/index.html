@@ -169,6 +169,26 @@
 	$(document).ready(function(){
 
 
+		$('html').keydown(function(event){
+			if(event.which === 39 ){
+				$('#btnAndarQuadradoFrente').trigger('click');
+			}
+
+			if(event.which === 37 ){
+				$('#btnAndarQuadradoAtras').trigger('click');
+			}
+
+			if(event.which === 40 ){
+				$('#btnAndarQuadradoBaixo').trigger('click');
+			}
+
+			if(event.which === 38 ){
+				$('#btnAndarQuadradoCima').trigger('click');
+			}
+		});
+
+
+
 		$('#btnAndarQuadradoFrente').click(function(){
 			$('.quadrado').animate({
 				left : "+=5",
